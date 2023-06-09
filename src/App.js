@@ -1,6 +1,6 @@
 import './App.css';
 import { createBrowserRouter, createRoutesFromElements, RouterProvider, Route, Link, Outlet } from 'react-router-dom';
-import Books from './components/Books';
+import Home from './components/Home';
 import Categories from './components/Categories';
 import Errorpage from './components/Errorpage';
 
@@ -8,7 +8,7 @@ function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/" element={<Root />} >
-        <Route index element={<Books />}></Route>
+        <Route index element={<Home />}></Route>
         <Route path="/categories" element={<Categories />}></Route>
         <Route path="*" element={<Errorpage />}></Route>
       </Route>
