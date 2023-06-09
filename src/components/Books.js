@@ -19,7 +19,7 @@ export default function Books() {
     return (
         <div>
             <ul>
-                {books.map((book) => (<Book key={book.author} books={book} />))}
+                {books.map((book) => (<Book key={book.author} books={book} setBooks={setBooks} />))}
             </ul>
         </div>
 
