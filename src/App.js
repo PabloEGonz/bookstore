@@ -26,13 +26,13 @@ function App() {
 
 const Root = () => (
   <>
-    <div>
+    <nav className="flex">
       <h1>Bookstore CMS</h1>
-      <ul>
-        <li><Link to="/">Books</Link></li>
-        <li><Link to="/categories">Categories</Link></li>
+      <ul className="flex links">
+        <li><Link className="nav-link" to="/">Books</Link></li>
+        <li><Link className="nav-link" to="/categories">Categories</Link></li>
       </ul>
-    </div>
+    </nav>
     <div>
       <Outlet />
     </div>

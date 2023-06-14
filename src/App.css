@@ -1,3 +1,108 @@
-.App {
+:root {
+  --blue: #0290ff;
+  --gray: #6c6b6b;
+}
+
+nav {
+  height: 10%;
+  color: var(--blue);
+  padding: 2% 60% 2% 7%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.links {
+  width: 45%;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--gray);
+}
+
+.list-ctnr {
+  padding: 2%;
+  width: 100%;
+  align-items: center;
+}
+
+.list {
+  width: 100%;
+  margin-top: 1%;
+  border-radius: 5px;
+  border: 1px solid var(--gray);
+  text-align: left;
+  padding: 2%;
+}
+
+.list h4,
+.list h3,
+.list p {
+  margin: 0;
+}
+
+.list h4 {
+  color: var(--gray);
+}
+
+.list h3 {
+  font-size: 1.3rem;
+}
+
+.list p {
+  font-size: 0.9rem;
+  margin-bottom: 1%;
+  color: var(--blue);
+  font-weight: 490;
+}
+
+form button {
+  border: none;
+  border-radius: 5px;
+  background-color: var(--blue);
+  color: #fff;
+  height: 35px;
+  width: 11%;
+  font-size: 1rem;
+}
+
+.list button {
+  border: none;
+  color: var(--blue);
+  background: none;
+}
+
+.add {
+  padding: 0 3% 5% 3%;
+}
+
+.add h2 {
+  color: var(--gray);
+  text-align: left;
+}
+
+.add form {
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+form input {
+  width: 33%;
+  height: 35px;
+  padding: 1%;
+  border: 1px solid var(--gray);
+  border-radius: 5px;
+}
+
+form select {
+  width: 15%;
+  height: 35px;
   text-align: center;
+  font-size: 1.1rem;
 }
