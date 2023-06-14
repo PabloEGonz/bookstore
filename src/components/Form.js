@@ -40,8 +40,9 @@ export default function Form() {
     }
   };
   return (
-    <div>
-      <form action="post" onChange={handleChange}>
+    <div className="add">
+      <h2>ADD NEW BOOK</h2>
+      <form className="flex" action="post" onChange={handleChange}>
         <input id="title" type="text" placeholder="Book Title" value={obj.title} />
         <input id="author" type="text" placeholder="Book Author" value={obj.author} />
         <select id="category">

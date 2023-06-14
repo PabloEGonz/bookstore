@@ -8,10 +8,10 @@ const Book = ({
 }) => {
   const dispatch = useDispatch();
   return (
-    <div>
-      <h2>{title}</h2>
-      <h3>{author}</h3>
-      <h3>{category}</h3>
+    <div className="list">
+      <h4>{category}</h4>
+      <h3>{title}</h3>
+      <p>{author}</p>
       <button
         type="button"
         onClick={() => {

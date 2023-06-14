@@ -6,7 +6,7 @@ export default function Books() {
   const { books } = useSelector((state) => state.books);
   return (
     <div>
-      <ul>
+      <ul className="flex-cl list-ctnr">
         {books.map((book) => (
           <Book
             key={book.item_id}
