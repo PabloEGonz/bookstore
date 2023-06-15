@@ -12,7 +12,7 @@ export default function Books() {
 
   useEffect(() => {
     setDeleteError(deleteMessage);
-  }, [deleteMessage]);
+  }, [isLoading]);
 
   useEffect(() => {
     dispatch(getBooks());
@@ -20,13 +20,13 @@ export default function Books() {
   if (isLoading) {
     return (
       <div>
-        <h1>Loading</h1>
+        <h1 className="message">Loading</h1>
       </div>
     );
   } if (error) {
     return (
       <div>
-        <h1>
+        <h1 className="message">
           Sorry, something went wrong. Error:
           {error}
         </h1>

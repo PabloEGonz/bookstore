@@ -17,6 +17,7 @@ export default function Form() {
 
   useEffect(() => {
     setError(formMessage);
+    console.log('done');
   }, [formMessage]);
 
   const handleTitlChng = (e) => {
@@ -49,15 +50,12 @@ export default function Form() {
         ...empty,
         category: obj.category,
       });
-      setTimeout(() => {
-        setError('');
-      }, 4000);
     } else {
       setError('Please make sure you have fill out all the inputs.');
-      setTimeout(() => {
-        setError('');
-      }, 4000);
     }
+    setTimeout(() => {
+      setError('');
+    }, 4000);
   };
   return (
     <div className="add">
