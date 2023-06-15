@@ -12,6 +12,7 @@ export default function Books() {
 
   useEffect(() => {
     setDeleteError(deleteMessage);
+    setTimeout(() => setDeleteError(''), 4000);
   }, [isLoading]);
 
   useEffect(() => {
