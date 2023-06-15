@@ -1,11 +1,18 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Book from './Book';
 import { getBooks } from '../redux/books/booksSlice';
 
 export default function Books() {
   const dispatch = useDispatch();
-  const { books, isLoading, error } = useSelector((state) => state.books);
+  const {
+    books, isLoading, error, deleteMessage,
+  } = useSelector((state) => state.books);
+  const [deleteError, setDeleteError] = useState('');
+
+  useEffect(() => {
+    setDeleteError(deleteMessage);
+  }, [deleteMessage]);
 
   useEffect(() => {
     dispatch(getBooks());
@@ -39,6 +46,7 @@ export default function Books() {
           />
         ))}
       </ul>
+      <span>{deleteError}</span>
     </div>
   );
 }
