@@ -103,8 +103,7 @@ form button {
   color: #fff;
   width: 11.5rem;
   height: 2.813rem;
-  font-size: 1rem;
-  font-family: 'Roboto Slab', serif;
+  font-family: "Roboto Slab", serif;
   font-size: 0.813rem;
   font-weight: bold;
   letter-spacing: 0.5px;
@@ -201,16 +200,18 @@ form select {
   border-radius: 50%;
   inset: 0;
   background: conic-gradient(var(--c) calc(var(--p) * 1%), #0000 0);
-  -webkit-mask: radial-gradient(
-    farthest-side,
-    #0000 calc(99% - var(--b)),
-    #000 calc(100% - var(--b))
-  );
-  mask: radial-gradient(
-    farthest-side,
-    #0000 calc(99% - var(--b)),
-    #000 calc(100% - var(--b))
-  );
+  -webkit-mask:
+    radial-gradient(
+      farthest-side,
+      #0000 calc(99% - var(--b)),
+      #000 calc(100% - var(--b))
+    );
+  mask:
+    radial-gradient(
+      farthest-side,
+      #0000 calc(99% - var(--b)),
+      #000 calc(100% - var(--b))
+    );
 }
 
 .perct {
@@ -218,6 +219,7 @@ form select {
   text-align: center;
   font-family: "Montserrat", sans-serif;
 }
+
 .perct span {
   color: var(--black);
   opacity: 0.5;
