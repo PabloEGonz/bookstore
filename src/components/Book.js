@@ -41,7 +41,12 @@ const Book = ({
       </div>
       <div className="stats">
         <div className="pie" style={styl} />
-        <span className="perct">80% Completed</span>
+        <span className="perct">
+          {' '}
+          <h3 className="number">80%</h3>
+          {' '}
+          Completed
+        </span>
       </div>
       <div className="progress flex-cl">
         <p>CURRENT CHAPTER</p>

@@ -2,6 +2,7 @@ import './App.css';
 import {
   createBrowserRouter, createRoutesFromElements, RouterProvider, Route, Link, Outlet,
 } from 'react-router-dom';
+import { RiAccountCircleFill } from 'react-icons/ri';
 import Home from './components/Home';
 import Categories from './components/Categories';
 import Errorpage from './components/Errorpage';
@@ -32,6 +33,7 @@ const Root = () => (
         <li><Link className="nav-link" to="/">Books</Link></li>
         <li><Link className="nav-link" to="/categories">Categories</Link></li>
       </ul>
+      <RiAccountCircleFill className="nav-icon" />
     </nav>
     <div>
       <Outlet />
