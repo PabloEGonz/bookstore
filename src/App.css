@@ -140,6 +140,7 @@ form select {
   0% {
     opacity: 1;
   }
+
   100% {
     opacity: 0;
     top: 50%;
@@ -153,28 +154,32 @@ form select {
 
 .pie {
   position: relative;
+
   --w: 70px;
+
   width: var(--w);
   height: var(--w);
   margin: 5px;
 }
 
-.pie:before {
+.pie::before {
   content: "";
   position: absolute;
   border-radius: 50%;
   inset: 0;
   background: conic-gradient(var(--c) calc(var(--p) * 1%), #0000 0);
-  -webkit-mask: radial-gradient(
-    farthest-side,
-    #0000 calc(99% - var(--b)),
-    #000 calc(100% - var(--b))
-  );
-  mask: radial-gradient(
-    farthest-side,
-    #0000 calc(99% - var(--b)),
-    #000 calc(100% - var(--b))
-  );
+  -webkit-mask:
+    radial-gradient(
+      farthest-side,
+      #0000 calc(99% - var(--b)),
+      #000 calc(100% - var(--b))
+    );
+  mask:
+    radial-gradient(
+      farthest-side,
+      #0000 calc(99% - var(--b)),
+      #000 calc(100% - var(--b))
+    );
 }
 
 .perct {
