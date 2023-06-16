@@ -48,8 +48,8 @@ const initialState = {
   books: [],
   isLoading: false,
   error: undefined,
-  formMessage: undefined,
-  deleteMessage: undefined,
+  addNew: false,
+  deleted: false,
 };
 
 const bookSlice = createSlice({
@@ -68,17 +68,23 @@ const bookSlice = createSlice({
         state.isLoading = false;
         state.error = action.error.name;
       })
-      .addCase(addBooks.fulfilled, (state, { payload }) => {
-        state.formMessage = `The book was ${payload}`;
+      .addCase(addBooks.pending, (state) => {
+        state.addNew = undefined;
       })
-      .addCase(addBooks.rejected, (state, { payload }) => {
-        state.formMessage = `Sorry, there was a problem. Error: ${payload.message}`;
+      .addCase(addBooks.fulfilled, (state) => {
+        state.addNew = true;
       })
-      .addCase(deleteBook.fulfilled, (state, { payload }) => {
-        state.formMessage = `The book was ${payload}`;
+      .addCase(addBooks.rejected, (state) => {
+        state.addNew = false;
       })
-      .addCase(deleteBook.rejected, (state, { payload }) => {
-        state.formMessage = `Error: ${payload.message}`;
+      .addCase(deleteBook.pending, (state) => {
+        state.deleted = false;
+      })
+      .addCase(deleteBook.fulfilled, (state) => {
+        state.deleted = true;
+      })
+      .addCase(deleteBook.rejected, (state) => {
+        state.deleted = false;
       });
   },
 });

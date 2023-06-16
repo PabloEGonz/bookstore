@@ -1,32 +1,54 @@
 :root {
   --blue: #0290ff;
-  --gray: #6c6b6b;
+  --gray: #e8e8e8;
+  --black: #121212;
+  --light: #fafafa;
+  --grayer: #9c9b9b;
+}
+
+* {
+  background-color: var(--light);
 }
 
 nav {
-  height: 10%;
+  height: 5.93rem;
   color: var(--blue);
-  padding: 2% 60% 2% 7%;
+  padding: 2% 6.25rem 2% 6.25rem;
   align-items: center;
-  justify-content: space-between;
+  font-family: "Montserrat", sans-serif;
+  justify-content: flex-start;
+  border-bottom: 1px solid var(--gray);
+}
+
+nav h1 {
+  font-size: 1.875rem;
+  font-weight: bold;
 }
 
 .links {
-  width: 45%;
   justify-content: space-between;
-  margin: 0;
+  width: 19%;
+  margin-left: 5%;
   padding: 0;
 }
 
 .nav-link {
   text-decoration: none;
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: var(--gray);
+  font-size: 1rem;
+  font-weight: normal;
+  letter-spacing: 1.9px;
+  color: var(--black);
+  text-align: left;
+}
+
+.nav-icon {
+  margin-left: auto;
+  width: 2rem;
+  height: 2rem;
 }
 
 .list-ctnr {
-  padding: 2%;
+  padding: 6.26rem;
   width: 100%;
   align-items: center;
 }
@@ -37,7 +59,16 @@ nav {
   border-radius: 5px;
   border: 1px solid var(--gray);
   text-align: left;
-  padding: 2%;
+  padding: 2rem 8% 2rem 1%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.book-item {
+  width: 40%;
+  color: var(--black);
+  font-family: "Roboto Slab", serif;
 }
 
 .list h4,
@@ -47,62 +78,184 @@ nav {
 }
 
 .list h4 {
-  color: var(--gray);
+  opacity: 0.5;
 }
 
 .list h3 {
-  font-size: 1.3rem;
+  font-size: 1.375rem;
 }
 
 .list p {
-  font-size: 0.9rem;
+  font-size: 0.875rem;
+  font-weight: 300;
   margin-bottom: 1%;
   color: var(--blue);
-  font-weight: 490;
+}
+
+.message {
+  color: var(--blue);
 }
 
 form button {
   border: none;
-  border-radius: 5px;
+  border-radius: 3px;
   background-color: var(--blue);
   color: #fff;
-  height: 35px;
-  width: 11%;
-  font-size: 1rem;
+  width: 11.5rem;
+  height: 2.813rem;
+  font-family: "Roboto Slab", serif;
+  font-size: 0.813rem;
+  font-weight: bold;
+  letter-spacing: 0.5px;
 }
 
 .list button {
   border: none;
   color: var(--blue);
   background: none;
+  padding: 0;
+  margin: 2% 4% 1% 0;
 }
 
 .add {
-  padding: 0 3% 5% 3%;
+  padding: 0 6.25rem 5%;
+  font-family: "Montserrat", sans-serif;
 }
 
 .add h2 {
-  color: var(--gray);
   text-align: left;
+  letter-spacing: -0.18px;
+  color: #888;
 }
 
 .add form {
   width: 100%;
   align-items: center;
   justify-content: space-between;
+  font-family: "Montserrat", sans-serif;
 }
 
 form input {
   width: 33%;
-  height: 35px;
+  height: 2.81rem;
   padding: 1%;
   border: 1px solid var(--gray);
   border-radius: 5px;
+  font-size: 1rem;
+  color: #c4c4c4;
 }
 
 form select {
-  width: 15%;
-  height: 35px;
+  width: 11%;
+  height: 2.81rem;
   text-align: center;
   font-size: 1.1rem;
+}
+
+.error {
+  color: red;
+}
+
+.success {
+  color: green;
+}
+
+.error,
+.success {
+  animation: message 6s;
+  position: absolute;
+  top: 70%;
+  left: 40%;
+}
+
+@keyframes message {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    top: 50%;
+  }
+}
+
+.stats {
+  display: flex;
+  align-items: center;
+}
+
+.pie {
+  position: relative;
+
+  --w: 70px;
+
+  width: var(--w);
+  height: var(--w);
+  margin: 5px;
+}
+
+.pie::before {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  inset: 0;
+  background: conic-gradient(var(--c) calc(var(--p) * 1%), #0000 0);
+  -webkit-mask:
+    radial-gradient(
+      farthest-side,
+      #0000 calc(99% - var(--b)),
+      #000 calc(100% - var(--b))
+    );
+  mask:
+    radial-gradient(
+      farthest-side,
+      #0000 calc(99% - var(--b)),
+      #000 calc(100% - var(--b))
+    );
+}
+
+.perct {
+  width: min-content;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+}
+
+.perct span {
+  color: var(--black);
+  opacity: 0.5;
+}
+
+.perct span .number {
+  color: var(--black);
+  font-size: 1rem;
+  font-weight: normal;
+  opacity: 1;
+}
+
+.progress {
+  width: 20%;
+  justify-content: center;
+  font-family: "Roboto Slab", serif;
+}
+
+.progress p {
+  margin: 1%;
+  opacity: 0.5;
+  color: var(--black);
+}
+
+.progress .chapter {
+  font-weight: 600;
+  margin-bottom: 5%;
+  opacity: 1;
+  color: var(--black);
+}
+
+.progress button {
+  background-color: var(--blue);
+  width: 11.5rem;
+  height: 2.063rem;
+  color: #fff;
+  font-size: 0.813rem;
+  font-weight: 300;
 }

@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { addBooks } from '../redux/books/booksSlice';
 
 export default function Form() {
@@ -10,15 +10,10 @@ export default function Form() {
     author: '',
     category: '',
   };
-  const { formMessage } = useSelector((state) => state.books);
   const [error, setError] = useState('');
+  const [classes, setClasses] = useState('');
   const dispatch = useDispatch();
   const [obj, setObj] = useState(empty);
-
-  useEffect(() => {
-    setError(formMessage);
-  }, [formMessage]);
-
   const handleTitlChng = (e) => {
     e.preventDefault();
     setObj({
@@ -49,15 +44,16 @@ export default function Form() {
         ...empty,
         category: obj.category,
       });
-      setTimeout(() => {
-        setError('');
-      }, 4000);
+      setError('The book was added succesfully');
+      setClasses('success');
     } else {
       setError('Please make sure you have fill out all the inputs.');
-      setTimeout(() => {
-        setError('');
-      }, 4000);
+      setClasses('error');
     }
+    setTimeout(() => {
+      setError('');
+      setClasses('');
+    }, 5000);
   };
   return (
     <div className="add">
@@ -76,7 +72,7 @@ export default function Form() {
         </select>
         <button type="button" onClick={handleSubmit}>Add Book</button>
       </form>
-      <span className="error">{error}</span>
+      <span className={classes}>{error}</span>
     </div>
   );
 }
