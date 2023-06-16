@@ -6,14 +6,21 @@ import { getBooks } from '../redux/books/booksSlice';
 export default function Books() {
   const dispatch = useDispatch();
   const {
-    books, isLoading, error, deleteMessage,
+    books, isLoading, error, deleted,
   } = useSelector((state) => state.books);
   const [deleteError, setDeleteError] = useState('');
+  const [classes, setClasses] = useState('');
 
   useEffect(() => {
-    setDeleteError(deleteMessage);
-    setTimeout(() => setDeleteError(''), 4000);
-  }, [isLoading]);
+    if (deleted) {
+      setDeleteError('The book was deleted succesfully');
+      setClasses('success');
+    }
+    setTimeout(() => {
+      setDeleteError('');
+      setClasses('');
+    }, 5000);
+  }, [deleted]);
 
   useEffect(() => {
     dispatch(getBooks());
@@ -47,7 +54,7 @@ export default function Books() {
           />
         ))}
       </ul>
-      <span>{deleteError}</span>
+      <span className={classes}>{deleteError}</span>
     </div>
   );
 }
